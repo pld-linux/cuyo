@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://freesoftware.fsf.org/download/%{name}/%{name}-%{version}.tar.gz
+# Source0-md5:	271db9b6c99cc7f8011dbd9edec9fd3a
 Patch0:		%{name}-make.patch
 URL:		http://www.karimmi.de/%{name}/
 BuildRequires:	automake
