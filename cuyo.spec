@@ -1,4 +1,5 @@
-Summary: 	Cuyo.
+Summary: 	Cuyo - a Tetris clone
+Summary(pl):	Cuyo - klon Tetrisa
 Name:		cuyo
 Version:	1.6.0alpha5
 Release:	1
@@ -10,7 +11,6 @@ URL:		http://www.karimmi.de/%{name}/
 BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRequires:	qt-devel
-Requires: 	qt
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -18,7 +18,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Cuyo is an interesting Tetris clone.
-  
+
+%description -l pl
+Cuyo to ciekawy klon Tetrisa.
+
 %prep
 %setup -q
 %patch0 -p1
@@ -50,7 +53,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING ChangeLog NEWS TODO README docs/cual
 %attr(755,root,root) %{_bindir}/%{name}
 %dir %{_datadir}/%{name}
-%dir %{_datadir}/%{name}/pics
 %{_datadir}/%{name}/*.ld
+%dir %{_datadir}/%{name}/pics
 %{_datadir}/%{name}/pics/*
 %{_mandir}/man6/*
