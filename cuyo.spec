@@ -1,12 +1,12 @@
 Summary:	Cuyo - a Tetris clone
 Summary(pl):	Cuyo - klon Tetrisa
 Name:		cuyo
-Version:	1.8.3
+Version:	1.8.5
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://freesoftware.fsf.org/download/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f100fb692bc9afc9cfd537d4948c38da
+# Source0-md5:	9c250217ab90baeb993a238b9b98f63f
 Patch0:		%{name}-make.patch
 URL:		http://www.karimmi.de/cuyo/
 BuildRequires:	automake
@@ -30,11 +30,14 @@ rm -f missing
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
-for i in src/{cuyo,prefs,punktefeld,spielfeld,startatdlg,tastenbtn}.h; do
+sed -i -e 's/include\/qglobal.h/include\/qt\/qglobal.h/' configure aclocal.m4 gwqt.m4
+%configure \
+	QTDIR=%{_prefix}
+for i in src/{cuyo,prefs,punktefeld,spielfeld,startatdlg,tastenbtn,sound}.h; do
 	moc $i > ${i%.h}.moc.cpp
 done
 %{__make} \
+	CPPFLAGS=-I/usr/include/qt \
 	%{!?debug:CXXDBGFLAGS="-DQT_NO_DEBUG -DQT_NO_CHECK %{rpmcflags}"} \
 	%{?debug:CXXDBGFLAGS="%{debugcflags}"}
 
