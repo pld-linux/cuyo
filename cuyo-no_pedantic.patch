@@ -1,12 +1,11 @@
-diff -urN cuyo-1.7.0.orig/src/Makefile.am cuyo-1.7.0/src/Makefile.am
---- cuyo-1.7.0.orig/src/Makefile.am	2002-09-09 19:48:31.000000000 +0200
-+++ cuyo-1.7.0/src/Makefile.am	2003-08-11 14:11:38.000000000 +0200
-@@ -61,7 +61,7 @@
+--- cuyo-1.8.2/src/Makefile.am~	2003-09-29 20:38:22.000000000 +0000
++++ cuyo-1.8.2/src/Makefile.am	2003-09-29 20:39:19.000000000 +0000
+@@ -65,7 +65,7 @@
  ## Dadurch, dass es so hier steht, kann man das
  ## Data-Dir zu Makezeiten noch ändern (im Gegensatz zu: steht in configure.in;
  ## dann ist es nach ./configure schon festgelegt).
--CXXFLAGS = $(QT_CXXFLAGS) -DPKGDATADIR=\"$(pkgdatadir)\" -Wall -W -ansi -pedantic $(CXXDBGFLAGS)
-+CXXFLAGS = $(QT_CXXFLAGS) -DPKGDATADIR=\"$(pkgdatadir)\" -Wall -W -ansi $(CXXDBGFLAGS)
+-CXXFLAGS = $(QT_CXXFLAGS) -DPKGDATADIR=\"$(pkgdatadir)\" -Wall -W -ansi -pedantic $(CXXDBGFLAGS) @CXXFLAGS@
++CXXFLAGS = $(QT_CXXFLAGS) -DPKGDATADIR=\"$(pkgdatadir)\" -Wall -W -ansi $(CXXDBGFLAGS) @CXXFLAGS@
  
  
  # Moc-Dateien erzeugen (QT_MOC wird von BNV_HAVE_QT gesetzt)
