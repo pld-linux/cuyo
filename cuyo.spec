@@ -1,12 +1,12 @@
 Summary:	Cuyo - a Tetris clone
 Summary(pl):	Cuyo - klon Tetrisa
 Name:		cuyo
-Version:	1.7.0
+Version:	1.8.1
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://freesoftware.fsf.org/download/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	e87f7a31df451fd5a674124b656e91fe
+# Source0-md5:	f9cf9126df8edbf0b3885d59d835f241
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-no_pedantic.patch
 URL:		http://www.karimmi.de/cuyo/
@@ -33,11 +33,12 @@ rm -f missing
 %{__autoheader}
 %{__automake}
 %configure
-for i in src/*.moc.cpp; do
-	rm -f $i;
-	moc ${i%.moc.cpp}.h > $i
+for i in src/{cuyo,prefs,punktefeld,spielfeld,startatdlg,tastenbtn}.h; do
+	moc $i > ${i%.h}.moc.cpp
 done
-%{__make}
+%{__make} \
+	%{!?debug:CXXDBGFLAGS="-DQT_NO_DEBUG -DQT_NO_CHECK %{rpmcflags}"} \
+	%{?debug:CXXDBGFLAGS="%{debugcflags}"}
 
 %install
 #Could somebody help me to force automake using DESTDIR? //pascalek
