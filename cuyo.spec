@@ -1,14 +1,13 @@
 Summary:	Cuyo - a Tetris clone
 Summary(pl):	Cuyo - klon Tetrisa
 Name:		cuyo
-Version:	1.8.2
+Version:	1.8.3
 Release:	1
 License:	GPL
 Group:		X11/Applications/Games
 Source0:	http://freesoftware.fsf.org/download/%{name}/%{name}-%{version}.tar.gz
-# Source0-md5:	f86a4bda57e0ab380880aad62188ecdb
+# Source0-md5:	f100fb692bc9afc9cfd537d4948c38da
 Patch0:		%{name}-make.patch
-Patch1:		%{name}-no_pedantic.patch
 URL:		http://www.karimmi.de/cuyo/
 BuildRequires:	automake
 BuildRequires:	autoconf
@@ -24,7 +23,6 @@ Cuyo to ciekawy klon Tetrisa.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 rm -f missing
