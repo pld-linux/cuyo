@@ -27,9 +27,10 @@ Cuyo to ciekawy klon Tetrisa.
 %patch0 -p1
 
 %build
-aclocal -I .
-%{__automake}
+rm -f missing
+%{__aclocal} -I .
 %{__autoconf}
+%{__automake}
 %configure
 %{__make}
 
