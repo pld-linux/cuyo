@@ -1,0 +1,12 @@
+diff -Nur cuyo-1.6.0alpha5.orig/configure.in cuyo-1.6.0alpha5.chng/configure.in
+--- cuyo-1.6.0alpha5.orig/configure.in	Fri Aug 30 19:00:54 2002
++++ cuyo-1.6.0alpha5.chng/configure.in	Tue Sep 10 10:12:29 2002
+@@ -18,7 +18,7 @@
+ AM_CONFIG_HEADER(config.h)
+ 
+ dnl g++: (*)
+-dnl AC_PROG_CXX
++AC_PROG_CXX
+ dnl Das Programm, mit dem installiert wird:
+ dnl AC_PROG_INSTALL
+ dnl X-Libs und so: (*)
