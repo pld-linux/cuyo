@@ -1,4 +1,4 @@
-Summary: 	Cuyo - a Tetris clone
+Summary:	Cuyo - a Tetris clone
 Summary(pl):	Cuyo - klon Tetrisa
 Name:		cuyo
 Version:	1.6.0alpha5
