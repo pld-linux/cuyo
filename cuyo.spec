@@ -1,5 +1,5 @@
 Summary:	Cuyo - a Tetris clone
-Summary(pl):	Cuyo - klon Tetrisa
+Summary(pl.UTF-8):   Cuyo - klon Tetrisa
 Name:		cuyo
 Version:	1.8.5
 Release:	2
@@ -18,7 +18,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Cuyo is an interesting Tetris clone.
 
-%description -l pl
+%description -l pl.UTF-8
 Cuyo to ciekawy klon Tetrisa.
 
 %prep
